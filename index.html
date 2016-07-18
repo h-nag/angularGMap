@@ -1,0 +1,44 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+  <meta charset="UTF-8" />
+  <script src='http://maps.googleapis.com/maps/api/js?sensor=false'></script>
+  <script src="./bower_components/angular/angular.js"></script>
+  <script src="./bower_components/angular-simple-logger/dist/angular-simple-logger.js"></script>
+  <script src="./bower_components/lodash/lodash.js"></script>
+  <script src="./bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+  <script src="./app.js"></script>
+  <link rel="stylesheet" href="./map.css">
+</script>
+</head>
+<body ng-controller="MapController">
+  <div>
+    <label for="map">地図：</label>
+    <select id="map" name="map" ng-model="mapData"
+    ng-options="map.id as map.title for map in maps">
+      <option value="">以下から選択してください。</option>
+    </select>
+  </div>
+ <div class="angular-google-map-container" ng-switch="mapData">
+　<span ng-switch-when="1">
+  <ui-gmap-google-map center='mapYokohama.center' zoom='mapYokohama.zoom'>
+    <ui-gmap-markers models="gmap1" coords="'self'" icon="'icon'">
+    </ui-gmap-markers>
+  </ui-gmap-markers>
+　</span>
+  <span ng-switch-when="2">
+  <ui-gmap-google-map center='mapYokohama.center' zoom='mapYokohama.zoom'>
+    <ui-gmap-markers models="gmap2" coords="'self'" icon="'icon'">
+    </ui-gmap-markers>
+  </ui-gmap-markers>
+  </span>
+  </ui-gmap-google-map>
+    <span ng-switch-when="3">
+    <ui-gmap-google-map center='mapTokyo.center' zoom='mapTokyo.zoom'>
+      <ui-gmap-markers models="gmap3" coords="'self'" icon="'icon'">
+      </ui-gmap-markers>
+    </ui-gmap-google-map>
+ </span>
+</div>
+</body>
+</html>
