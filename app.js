@@ -18,9 +18,9 @@ angular.module('myApp', ['uiGmapgoogle-maps'])
     $scope.gmap1 = [
      {
        "id":1,
-       "latitude":35.459923,
-       "longitude":139.635290,
-       "title":"パシフィコ横浜"
+       "latitude":35.876218,
+       "longitude":139.790169,
+       "title":"南越谷駅"
      }
    ];
 
@@ -56,10 +56,16 @@ angular.module('myApp', ['uiGmapgoogle-maps'])
       }, zoom: 16
     };
 
+    $scope.mapSaitama = {
+      center: {
+        latitude: 35.876218,
+        longitude: 139.790169
+      }, zoom: 16
+    };
     $scope.maps = [
      {
        "id":1,
-       "title":"パシフィコ横浜"
+       "title":"南越谷駅"
      },
      {
        "id":2,
